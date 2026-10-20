@@ -12,19 +12,25 @@
 brew tap sametcelikbicak/tap https://github.com/sametcelikbicak/homebrew-tap
 brew trust sametcelikbicak/tap      # Homebrew requires trusting third-party taps
 brew install vidfix
+brew install rolecraft
 ```
 
 ## Available formulae
 
-| Formula                                             | Description                                                  |
-| --------------------------------------------------- | ------------------------------------------------------------ |
-| [vidfix](https://github.com/sametcelikbicak/vidfix) | Diagnose why a video will not play and fix it in one command |
+| Formula                                               | Description                                                                  | Source                                                                        |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [vidfix](https://github.com/sametcelikbicak/vidfix)   | Diagnose why a video will not play and fix it in one command                 | [sametcelikbicak/vidfix](https://github.com/sametcelikbicak/vidfix)             |
+| [rolecraft](https://github.com/rolecraft-sh/rolecraft) | Package manager for AI agents — install, test, publish and manage skills      | [rolecraft-sh/rolecraft](https://github.com/rolecraft-sh/rolecraft)             |
+
+Each formula is published from its own repository and mirrored here automatically, so the formula version always matches the released version.
+
+> `rolecraft` is a Node.js CLI and needs Node.js >= 22 in `PATH` (nvm, asdf or a system install). The Homebrew formula does not pull in Homebrew's own `node`, which would add 19 dependencies and has no bottle for older macOS releases.
 
 ## How a formula is updated
 
-Each tool publishes its own GitHub release. The tap mirrors it automatically:
+Each tool publishes its own release. The tap mirrors it automatically:
 
-1. The tool's release workflow packages the release tarball and its checksum.
+1. The tool's release workflow publishes the release artifact (a tarball or an npm package).
 2. The same workflow pushes the new version and checksum into `Formula/<tool>.rb` here.
 3. The workflow in this repository checks the formula with `brew style` and `brew audit --strict`.
 

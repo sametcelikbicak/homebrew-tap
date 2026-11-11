@@ -2,7 +2,7 @@ class Timebender < Formula
   desc "CLI-first Pomodoro timer with a live-synchronised web interface"
   homepage "https://github.com/sametcelikbicak/timebender"
   url "https://registry.npmjs.org/timebender/-/timebender-0.1.0.tgz"
-  sha256 "PLACEHOLDER_SHA256"
+  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
   license "MIT"
 
   # timebender is a Node.js CLI and requires Node.js >= 22 in PATH.

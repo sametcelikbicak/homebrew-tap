@@ -23,5 +23,6 @@ jobs:
         if: github.event_name == 'push'
         run: |
           brew tap sametcelikbicak/tap https://github.com/sametcelikbicak/homebrew-tap
+          brew trust --formula sametcelikbicak/tap/vidfix sametcelikbicak/tap/timebender || brew trust sametcelikbicak/tap
           brew audit --strict --skip-style sametcelikbicak/tap/vidfix
           brew audit --strict --skip-style sametcelikbicak/tap/timebender

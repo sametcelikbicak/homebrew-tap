@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: ruby syntax
-        run: ruby -c Formula/vidfix.rb
+        run: |
+          ruby -c Formula/vidfix.rb
+          ruby -c Formula/timebender.rb
 
       - name: brew style
         run: brew style Formula/
@@ -22,3 +24,4 @@ jobs:
         run: |
           brew tap sametcelikbicak/tap https://github.com/sametcelikbicak/homebrew-tap
           brew audit --strict --skip-style sametcelikbicak/tap/vidfix
+          brew audit --strict --skip-style sametcelikbicak/tap/timebender
